@@ -19,3 +19,11 @@ let options = "?" + "term=" + search + "&format=" + format + "&size=" + numRes;
 let resultPage = httpGet(url + options);
 
 // Then write her source code.
+
+let outputZoneOut = document.createElement("pre");
+let outputZoneIn = document.createElement("code");
+let insertionZone = document.createTextNode(resultPage);
+
+outputZoneIn.appendChild(insertionZone);
+outputZoneOut.appendChild(outputZoneIn);
+document.body.appendChild(outputZoneOut);
